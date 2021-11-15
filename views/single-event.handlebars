@@ -1,0 +1,85 @@
+<class="container">
+    <div class="d-flex justify-content-center">
+        {{#unless isCreator}}
+            <div class="card text-dark w-50">
+                <h1 id="name">{{ name }}</h1>
+                <h2 id="date">{{ date }}</h2>
+            
+                <div id="creator">Created by: {{ creator }}</div>
+                <br>
+                <div id="description"> {{ description }}</div>
+                <br>
+                <div id="location">Location: {{ location }}</div>
+                <br>
+            
+                <div class=>
+                Attendees:
+                <br>
+                {{#each rsvps}}
+                {{ this }}
+                <br>
+                {{/each}}
+                </div>
+            
+                {{#unless isAttending}}
+                <div>
+                    <div id="not-attending">You are not attending this event!</div>
+                </div>
+                <div>
+                    <button class="btn btn-primary" id="rsvp-button">RSVP</button>
+                </div>
+                {{/unless}}
+                {{#if isAttending}}
+                <div class="row">
+                    <div id="attending">You are attending this event!</div>
+                </div>
+                <div>
+                    <button class="btn btn-danger" id="cancel-rsvp-button">Cancel RSVP</button>
+                </div>
+            {{/if}}
+        {{/unless}}
+        {{#if isCreator}}
+        <div class="d-flex justify-content-center">
+        <div class="col-12">     
+            <div class="mb-6">
+                <div id="creator">Created by: You!</div>
+                <label for="name" class="form-label">Event Name</label>
+                <input id="name" class="form-control" type='text' value="{{name}}"></input>
+            </div>
+            <div class="mb-6">
+                <label for="date" class="form-label">Date</label>
+                <input id="date" type="date" class="form-control" value='{{date}}'></input>
+            </div>
+            <div class="mb-6">
+                <label for="description" class="form-label">Description</label>
+                <input id="description" class="form-control" value="{{description}}"></input>
+            </div>
+            <div class="mb-6">
+                <label for="location" class="form-label">Location</label>
+                <input id="location" class="form-control" value="{{ location }}"></input>
+                <br>
+            </div>
+            <div class="mb-6">
+                Attendees:
+                <br>
+                {{#each rsvps}}
+                    {{ this }}
+                    <br>
+                {{/each}}
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary" id="edit-event-btn">Save</button>
+                <button class="btn btn-danger ms-2" id="delete-event-btn">Delete</button>
+            </div>
+            </div>
+            </div>
+        {{/if}}
+</container>
+
+<script src="/javascript/edit-event.js"></script>
+<script src="/javascript/rsvp.js"></script>
+<script src="/javascript/cancel-rsvp.js"></script>
+
+{{! Language: handlebars }}
+{{! Path: views\single-event.handlebars }}

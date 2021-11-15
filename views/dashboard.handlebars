@@ -1,0 +1,40 @@
+<div class="container m-0">
+    <div class="row row-cols-3">
+       <div class="col p-1 m-0 h-25">
+            <div class="d-flex button-holder justify-content-end">
+                <a class="btn btn-outline-primary" href="/dashboard/create_event" role="button">Create Event</a>
+            </div>
+            <div class="card">
+                <h3 class="card-header text-uppercase">Search By Name</h3>
+                    <form id="search-form" class="card-body">
+                        <input id="search-input" type="text" autofocus="true" class="search-input" />
+                        <button type="submit"  class="btn btn-outline-secondary">Find</button>
+                    </form>
+            </div>
+       </div>
+       <div class="col-6  p-1 ml-3">
+           <h2>{{title}}</h2>
+            <div class="d-flex">
+            {{#each events as |event|}}
+            {{> events-info event}}
+            {{/each}}
+            </div>
+       </div>
+       <div class="col p-1 m-0">
+           <div class="card">
+                <h3 class="card-header text-uppercase">Discover By Topic</h3>
+
+                    <div class="card-body" id="search-buttons">
+                        <a href="./events/all" class="btn btn-outline-secondary" role="button">All</a>
+                        <a href="./events/hosting" class="btn btn-outline-secondary" role="button">Events I'm Hosting</a>
+                        <a href="./events/attending" class="btn btn-outline-secondary" role="button">Events I'm Attending</a>
+                        <a href="./events/today" class="btn btn-outline-secondary" role="button">Today</a>
+                        <a href="./events/thisweek" class="btn btn-outline-secondary" role="button">This Week</a>
+                        <a href="./events/new" class="btn btn-outline-secondary" role="button">New</a>
+                     </div>
+            </div>
+       </div>
+
+    
+</div>
+<script src="/javascript/search.js"></script>

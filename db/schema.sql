@@ -1,0 +1,41 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS event;
+DROP TABLE IF EXISTS rsvp;
+
+CREATE TABLE user (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(30) NOT NULL,
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE event (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(30) NOT NULL,
+  description VARCHAR(300) NOT NULL,
+  created_at TIMESTAMP,
+  date DATETIME NOT NULL,
+  location VARCHAR(30) NOT NULL,
+  creator_id INTEGER,
+  CONSTRAINT fk_creator
+    FOREIGN KEY (creator_id)
+    REFERENCES user(id)
+    ON DELETE SET NULL
+);
+
+CREATE TABLE rsvp (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  event_id INTEGER NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_user 
+    FOREIGN KEY (user_id) 
+    REFERENCES user(id) 
+    ON DELETE CASCADE,
+  CONSTRAINT fk_event 
+    FOREIGN KEY (event_id) 
+    REFERENCES event(id) 
+    ON DELETE CASCADE
+);

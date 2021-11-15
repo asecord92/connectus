@@ -1,0 +1,196 @@
+* {
+  margin: 5px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #31343c;
+  color: #96c7ca;
+  padding: 0%;
+}
+
+/* <header> style start */
+header {
+  padding: 20px 55px;
+  background-color: #31343c;
+  justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+}
+
+header a, header a:hover {
+  text-decoration: none;
+  background: #31343c;
+  color: #96c7ca;
+  /* padding: 10px; */
+  /* border-bottom: 3px solid #96c7ca; */
+}
+
+header nav {
+  float: right;
+  /* margin: 7px 0; */
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  padding: 5px 15px;
+  font-weight: lighter;
+  font-size: 25px;
+  color: #96c7ca;
+}
+
+.name img {
+  border: 3px solid #96c7ca;
+  border-radius: 10px;
+}
+
+
+/* <header> style end */
+/* footer */
+footer {
+  padding: 10px 35px;
+  font-size: 15px;
+  background-color: black;
+  color: #96c7ca;
+  flex-wrap: wrap;
+  font-family: "Helvetica Neue";
+  flex-shrink: 0;
+}
+
+/* footer style end */
+
+
+footer h2 {
+  display: inline;
+  font-size: 30px;
+  margin: 0;
+}
+
+footer div {
+  float: right;
+  line-height: 1.5;
+  text-align: right;
+}
+
+section {
+  color:  #96c7ca;
+  justify-items: center;
+  padding: 60px;
+}
+
+div {
+    /* display: block; */
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Hero style start */
+.hero {
+  background-image: url('/images/bg.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  height: 350px;
+  width: 99.3%;
+  /* background-attachment: fixed; */
+  background-position: 80%;
+
+  flex-direction: column;
+}
+
+.hero h1{
+  display: flex;
+  font-size: 40px;
+  color: #96c7ca;
+  background-color: #31343c;
+  height: 50px;
+  justify-content: center;
+}
+
+/* .hero create-btn{
+  position: absolute;
+  right:    0;
+  bottom:   0;;
+
+} */
+
+.hero .btn-holder {
+  justify-content: flex-end;
+  display: flex;
+}
+/* Hero style end */
+
+
+
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+header {
+  padding-bottom: 0;
+  justify-content: center;
+}
+
+header h1 {
+  width: 100%;
+  text-align: center;
+}
+
+header nav ul {
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+header nav ul li a {
+  font-size: 20px;
+}
+
+footer h2, footer div {
+  text-align: center;
+  width: 100%;
+}
+
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+header h1 {
+  /* this will be applied on any screen between 768px and 575px */
+  font-size: 80px;
+}
+header h1 a { 
+  font-size: 80px;
+}
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+header h1 {
+  /* this will be applied on any screen smaller than 575px */
+  font-size: 100px;
+}
+
+.contact-info {
+  flex-direction: column;
+  max-width: fit-content;
+}
+
+}

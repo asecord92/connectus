@@ -1,0 +1,12 @@
+{{#if events.length}}
+<section >
+  <h2>New Events</h2>
+    <div class="d-flex space-between">
+    {{#each events as |event|}}
+    {{> events-info event}}
+      
+    
+    {{/each}}
+    </div>
+</section>
+{{/if}}

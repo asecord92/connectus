@@ -1,0 +1,22 @@
+<div class="d-flex space-between">
+  <div class="card w-50" style="background-color: #31343c;">
+    <h3 class="card-header text-uppercase text-center">Our Mission</h3>
+    <div class="card-body text-white">
+      <h6 class="fw-bold fst-italic">If you want to go fast, go alone. If you want to go far, go together.” - African proverb </h6>
+      <p>This app is a way to connect with people, make friends, find support, and explore your interests. Thousands of events are happening every day, both online and in person!</p>
+    </div>
+  </div>
+
+  <div class="card w-50" style="background-color: #31343c;">
+    <h3 class="card-header text-uppercase text-center">Explore</h3>
+    <div class="card-body text-center">
+      <span ><i class="fas fa-globe-americas fa-7x"></i></span>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="./events/all" class="btn btn-primary btn-lg" role="button">All Events</a>
+        {{#unless loggedIn}}
+        <a class="btn btn-primary btn-lg" href="/signup" role="button">Sign Up</a>
+        {{/unless}}
+      </div>
+    </div>
+  </div>
+</div>
