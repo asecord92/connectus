@@ -6,7 +6,7 @@
 ![screenshot](assets/images/screenshot.png)
 
 ## Deployed application:
-
+https://asecord-connectus.herokuapp.com/
 
 ## Table of Contents
 * [Technologies used](#technologies-used)
@@ -28,7 +28,7 @@
 
 
 ## Features
-* Go to [insert web link here] and click "Login". 
+* Go to https://asecord-connectus.herokuapp.com/ and click "Login". 
 * After that you will be asked to login or sign up. Your password is protected as you're typing it in.
 * You can create events, search for an event by name, see events that you are hosting and attending, and search by today or this week. 
 
