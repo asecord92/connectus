@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 const { Rsvp, User, Event } = require('../models');
 const { Op } = require('sequelize');
+const {format} =require('date-fns')
 
 router.get('/', withAuth, (req,res) => {
   Event.findAll({
@@ -18,11 +19,11 @@ router.get('/', withAuth, (req,res) => {
         };
         data.events = dbEventData.map(event => {
             const newDate = new Date(event.dataValues.date)
-            const formatedDate = `${newDate.getMonth()}-${newDate.getDay()}-${newDate.getFullYear()}`
+            const formatedDate = format(newDate, 'MM-dd-yyyy');
             var currentEvent = {
                 id: event.dataValues.id,
                 name: event.dataValues.name,
-                date: formatedDate,
+                date: formatedDate
             }
             return currentEvent;
         });
